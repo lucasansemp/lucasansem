@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lucas Ansem - Programador Python, HTML, MySQL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f4f6f9, #eef1f5);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #002244, #003366);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2.8rem; font-weight: 600; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+        .container {
+            max-width: 1200px;
+            margin: -40px auto 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: center;
+        }
+        .container img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #003366;
+        }
+        h2, h3 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        section, .projects, .skills, .contact {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+        ul { list-style: none; }
+        li { margin: 12px 0; font-size: 1.05rem; }
+        .skills { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skill {
+            background: linear-gradient(135deg, #003366, #00509e);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 500;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+        .contact a { color: #00509e; }
+        footer {
+            background: #002244;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Lucas Ansem</h1>
+    <p>Programador Python, HTML, MySQL e mais</p>
+</header>
+
+<div class="container">
+    <div class="bio animate-on-scroll">
+        <h2>Perfil Profissional</h2>
+        <p>
+            Sou Lucas Ansem, profissional de tecnologia com sólida base em <strong>Administração</strong>, <strong>Marketing Digital</strong> e <strong>Desenvolvimento de Software</strong>. Atuo há mais de 12 anos com programação, iniciando aos 14 anos, e possuo experiência prática em projetos profissionais voltados à automação, análise de dados e otimização de processos.
+            <br><br>
+            Desenvolvi <strong>sistemas de análise de dados para empresas de coleta de lixo</strong>, focados no controle de <strong>consumo de combustível</strong>, <strong>aproveitamento operacional</strong> e <strong>balanceamento inteligente de rotas</strong>, gerando redução de custos e maior eficiência logística.
+            <br><br>
+            Minha atuação combina visão estratégica de negócios com execução técnica, entregando soluções orientadas a dados, escaláveis e focadas em resultado.
+        </p>
+    </div>
+    <img src="https://lucasansemp.github.io/lucasansem/lucasansem.jpg" alt="Lucas Ansem">
+</div>
+
+<section class="projects animate-on-scroll">
+    <h3>Formação Acadêmica</h3>
+    <ul>
+        <li><strong>Administração</strong> — Universidade Federal de Santa Catarina (UFSC)</li>
+        <li><strong>Marketing Digital</strong> — Formação concluída</li>
+        <li><strong>Análise e Desenvolvimento de Sistemas</strong> — Uniasselvi <em>(Conclusão prevista: 2028)</em></li>
+    </ul>
+</section>
+
+<div class="projects animate-on-scroll">
+    <h3>Meus Projetos</h3>
+    <ul>
+        <li><strong>BETPRO</strong> - Sistema automatizado para apostas na Blaze, com IA de previsão.</li>
+        <li><strong>Vidente</strong> - Inteligência artificial que realiza apostas automaticamente.</li>
+        <li><strong>CMS e Databases</strong> - Desenvolvimento para servidores de emuladores de Habbo, com gerenciamento completo de banco de dados.</li>
+        <li><strong>Bot para Runescape</strong> - Bot desenvolvido para automatizar tarefas no jogo.</li>
+        <li><strong>Servidores de GTA</strong> - Administração de servidores de GTA San Andreas e GTA V.</li>
+    </ul>
+</div>
+
+<div class="skills animate-on-scroll">
+    <h3>Habilidades</h3>
+    <div class="skill">Python</div>
+    <div class="skill">HTML/CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">MySQL</div>
+    <div class="skill">C++</div>
+    <div class="skill">Git/GitHub</div>
+    <div class="skill">Análise de Dados</div>
+    <div class="skill">Otimização de Rotas</div>
+</div>
+
+<div class="contact animate-on-scroll">
+    <h3>Contato</h3>
+    <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/48988563082" target="_blank">+55 48 98856-3082</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/lucas.ansem" target="_blank">@lucas.ansem</a></li>
+        <li><strong>E-mail:</strong> <a href="mailto:lucasansem@gmail.com">lucasansem@gmail.com</a></li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2025 Lucas Ansem | Todos os direitos reservados</p>
+</footer>
+
+<script>
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    window.addEventListener('scroll', () => {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) el.classList.add('visible');
+        });
+    });
+</script>
+
+</body>
+</html>
