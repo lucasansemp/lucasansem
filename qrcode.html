@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Codes | Lucas Ansem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0b3c5d;
+            --secondary: #1d70a2;
+            --bg: #f4f6f8;
+            --card: #ffffff;
+            --text: #1f2933;
+            --muted: #6b7280;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #eef2f7, #f9fafb);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 32px 16px 48px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        header p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 28px 24px 32px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        .qr {
+            margin: 0 auto;
+            padding: 14px;
+            background: #f9fafb;
+            border-radius: 16px;
+            display: inline-block;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        .card a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        @media print {
+            body { background: white; }
+            .card { box-shadow: none; border: 1px solid #ccc; }
+            footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Links Digitais</h1>
+    <p>Escaneie o QR Code ou clique para acessar</p>
+</header>
+
+<main class="grid">
+
+    <section class="card">
+        <h2>Página Principal</h2>
+        <div class="qr" id="qr-site"></div>
+        <a href="https://lucasansemp.github.io/lucasansem/" target="_blank">Clique aqui para ir para a página</a>
+    </section>
+
+    <section class="card">
+        <h2>Relatório Gerencial</h2>
+        <div class="qr" id="qr-relatorio"></div>
+        <a href="https://lucasansemp.github.io/lucasansem/Relat%C3%B3rio%20Gerencial%20-%20Lucas%20Ansem%20Passos.html" target="_blank">Clique aqui para ir para o relatório</a>
+    </section>
+
+    <section class="card">
+        <h2>Gráficos Interativos</h2>
+        <div class="qr" id="qr-graficos"></div>
+        <a href="https://lucasansemp.github.io/lucasansem/Mobile%20Interativo.html" target="_blank">Clique aqui para ir para os gráficos</a>
+    </section>
+
+</main>
+
+<footer>
+    Lucas Ansem · Portfólio Digital
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    const size = window.innerWidth < 480 ? 140 : 180;
+
+    new QRCode(document.getElementById('qr-site'), {
+        text: 'https://lucasansemp.github.io/lucasansem/',
+        width: size,
+        height: size
+    });
+
+    new QRCode(document.getElementById('qr-relatorio'), {
+        text: 'https://lucasansemp.github.io/lucasansem/Relat%C3%B3rio%20Gerencial%20-%20Lucas%20Ansem%20Passos.html',
+        width: size,
+        height: size
+    });
+
+    new QRCode(document.getElementById('qr-graficos'), {
+        text: 'https://lucasansemp.github.io/lucasansem/Mobile%20Interativo.html',
+        width: size,
+        height: size
+    });
+</script>
+
+</body>
+</html>
