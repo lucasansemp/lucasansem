@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – Produção Material Britado</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin:0; background:#f4f6f8; }
+    header { background:#1f2937; color:#fff; padding:16px; text-align:center; }
+    header h1 { margin:0; font-size:22px; }
+    header p { margin:4px 0 0; font-size:14px; opacity:.9 }
+
+    .container { max-width:1200px; margin:20px auto; padding:16px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+    .card { background:#fff; border-radius:12px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,.08); }
+    .card h3 { margin:0 0 6px; font-size:14px; color:#555 }
+    .card span { font-size:22px; font-weight:bold; color:#111 }
+
+    .section { margin-top:28px }
+    .section h2 { margin-bottom:12px; font-size:18px; }
+
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px }
+    @media (max-width: 768px) {
+      .grid { grid-template-columns:1fr }
+    }
+
+    table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.08) }
+    th, td { padding:10px; border-bottom:1px solid #eee; text-align:right }
+    th { background:#111827; color:#fff; text-align:center }
+    td:first-child { text-align:left }
+    tr:last-child td { border-bottom:none }
+    .total { font-weight:bold; background:#eef2ff }
+
+    .filter { margin-bottom:12px }
+    select { padding:8px 10px; border-radius:8px; border:1px solid #ccc }
+
+    canvas { background:#fff; padding:12px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.08) }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dashboard de Produção – Material Britado</h1>
+  <p>Visão interativa | Otimizado para celular e desktop</p>
+</header>
+
+<div class="container">
+
+  <div class="cards">
+    <div class="card"><h3>Produção 2024 (m³)</h3><span>61.013</span></div>
+    <div class="card"><h3>Produção 2025 (m³)</h3><span>86.631</span></div>
+    <div class="card"><h3>Crescimento</h3><span>+41,99%</span></div>
+    <div class="card"><h3>Lucro Bruto 2025</h3><span>51%</span></div>
+  </div>
+
+  <div class="section">
+    <h2>Produção por Tipo de Material</h2>
+    <div class="filter">
+      <label>Selecione o ano:</label>
+      <select id="yearSelect" onchange="updateChart()">
+        <option value="2024">2024</option>
+        <option value="2025" selected>2025</option>
+      </select>
+    </div>
+    <canvas id="materialChart"></canvas>
+  </div>
+
+  <div class="section grid">
+    <div>
+      <h2>Saída de Material – 2024</h2>
+      <table>
+        <tr><th>Material</th><th>Qtd</th></tr>
+        <tr><td>Rachão</td><td>34.472</td></tr>
+        <tr><td>Bica</td><td>17.628</td></tr>
+        <tr><td>Base</td><td>0</td></tr>
+        <tr><td>Brita 2</td><td>0</td></tr>
+        <tr><td>Detonado</td><td>5.367</td></tr>
+        <tr><td>Macabarro</td><td>0</td></tr>
+        <tr><td>Barro</td><td>36</td></tr>
+        <tr><td>Macadame</td><td>0</td></tr>
+        <tr><td>Mataco</td><td>3.510</td></tr>
+        <tr class="total"><td>Total</td><td>61.013</td></tr>
+      </table>
+    </div>
+
+    <div>
+      <h2>Saída de Material – 2025</h2>
+      <table>
+        <tr><th>Material</th><th>Qtd</th></tr>
+        <tr><td>Rachão</td><td>30.586</td></tr>
+        <tr><td>Bica</td><td>3.052</td></tr>
+        <tr><td>Base</td><td>38.362</td></tr>
+        <tr><td>Brita 2</td><td>1.809</td></tr>
+        <tr><td>Detonado</td><td>3.385</td></tr>
+        <tr><td>Macabarro</td><td>2.581</td></tr>
+        <tr><td>Barro</td><td>282</td></tr>
+        <tr><td>Macadame</td><td>86</td></tr>
+        <tr><td>Mataco</td><td>6.488</td></tr>
+        <tr class="total"><td>Total</td><td>86.631</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const data = {
+  2024: [34472,17628,0,0,5367,0,36,0,3510],
+  2025: [30586,3052,38362,1809,3385,2581,282,86,6488]
+}
+
+const labels = ['Rachão','Bica','Base','Brita 2','Detonado','Macabarro','Barro','Macadame','Mataco']
+
+let chart
+
+function updateChart(){
+  const year = document.getElementById('yearSelect').value
+  if(chart) chart.destroy()
+  chart = new Chart(document.getElementById('materialChart'), {
+    type:'bar',
+    data:{ labels:labels, datasets:[{ label:'Produção '+year+' (m³)', data:data[year] }]},
+    options:{ responsive:true, plugins:{ legend:{ display:true } } }
+  })
+}
+
+updateChart()
+</script>
+
+</body>
+</html>

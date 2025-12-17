@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório Gerencial de Produção e Projeção 2026</title>
+  <style>
+    :root {
+      --primary: #1e293b;
+      --accent: #4f46e5;
+      --bg: #f1f5f9;
+      --white: #ffffff;
+      --text: #334155;
+    }
+
+    body { 
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+      background: var(--bg); 
+      margin: 0; 
+      padding: 0; 
+      color: var(--text);
+    }
+
+    /* Otimização para visualização mobile e PDF */
+    .container { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      background: var(--white); 
+      padding: 40px 30px; 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 20px 15px; }
+      h1 { font-size: 1.4rem; }
+    }
+
+    header { 
+      text-align: center; 
+      border-bottom: 3px solid var(--accent); 
+      padding-bottom: 20px; 
+      margin-bottom: 30px;
+    }
+
+    h1 { margin: 0; color: var(--primary); font-size: 1.8rem; text-transform: uppercase; }
+    h2 { margin: 5px 0 0; font-size: 1.1rem; color: #64748b; font-weight: 400; }
+    
+    h3 { 
+      margin-top: 35px; 
+      font-size: 1.2rem; 
+      color: var(--primary); 
+      display: flex; 
+      align-items: center;
+      gap: 10px;
+    }
+    h3::before { content: ''; display: inline-block; width: 4px; height: 24px; background: var(--accent); border-radius: 2px; }
+
+    p { line-height: 1.7; font-size: 1.05rem; margin-bottom: 20px; }
+
+    .badge { 
+      display: inline-block; 
+      padding: 4px 12px; 
+      border-radius: 20px; 
+      background: #dcfce7; 
+      color: #166534; 
+      font-weight: 700; 
+      font-size: 0.9rem;
+    }
+
+    /* Grid Responsiva */
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 25px; 
+      margin-top: 15px;
+    }
+
+    /* Estilo de Tabelas Modernas */
+    .table-wrapper { width: 100%; overflow-x: auto; border-radius: 10px; border: 1px solid #e2e8f0; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th { background: #f8fafc; color: #475569; font-weight: 600; padding: 12px 15px; text-align: left; font-size: 0.85rem; text-transform: uppercase; border-bottom: 2px solid #e2e8f0; }
+    td { padding: 12px 15px; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
+    
+    .td-right { text-align: right; font-variant-numeric: tabular-nums; }
+    
+    tr:hover { background: #f8fafc; }
+    .total { background: #f1f5f9; font-weight: 800; color: var(--primary); }
+    .total td { border-top: 1px solid #cbd5e1; }
+
+    .footer { 
+      margin-top: 50px; 
+      padding-top: 20px; 
+      border-top: 1px solid #e2e8f0; 
+      color: #94a3b8; 
+      font-size: 0.85rem; 
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Ajustes específicos para Impressão PDF */
+    @media print {
+      body { background: white; }
+      .container { box-shadow: none; width: 100%; padding: 0; }
+      .badge { border: 1px solid #166534; }
+      .table-wrapper { border: 1px solid #eee; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Relatório Gerencial de Produção</h1>
+      <h2>Análise de Material Britado & Projeção 2026</h2>
+    </header>
+
+    <section>
+      <h3>1. Visão Geral da Produção (2024 x 2025)</h3>
+      <p>
+        Em 2025, a produção de material britado apresentou crescimento expressivo frente a 2024. O volume total produzido passou de 
+        <strong>52.100,00 m³</strong> em 2024 para <strong>73.809,44 m³</strong> em 2025, representando um aumento de 
+        <span class="badge">↑ 41,67%</span>. O faturamento acompanhou essa evolução, passando de <strong>R$ 4.062.864,00</strong> 
+        para <strong>R$ 7.172.715,52</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h3>2. Principais Mudanças Operacionais</h3>
+      <p>
+        Em 2025 iniciou-se de forma efetiva a <strong>produção de base</strong>, alterando o perfil produtivo da unidade. Houve redução na comercialização de rachão e bica, utilizados como matéria-prima para a fabricação da base.
+      </p>
+      <p>
+        A substituição da pá carregadeira por um equipamento de maior porte resultou em ganhos de produtividade e organização. A implantação do <strong>britador de base</strong> ampliou a capacidade nominal da planta.
+      </p>
+    </section>
+
+    <section>
+      <h3>3. Custos Operacionais e Resultado (2025)</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição do Custo / Resultado</th>
+              <th class="td-right">Valor (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Detonação</td><td class="td-right">1.758.266,86</td></tr>
+            <tr><td>Peças e Manutenção</td><td class="td-right">1.053.067,11</td></tr>
+            <tr><td>Combustível (Diesel)</td><td class="td-right">675.633,00</td></tr>
+            <tr><td>Serviços de Terceiros</td><td class="td-right">193.014,57</td></tr>
+            <tr class="total"><td>Total em Custos Apurados</td><td class="td-right">3.679.981,54</td></tr>
+            <tr><td>Faturamento Bruto</td><td class="td-right">7.964.800,52</td></tr>
+            <tr class="total" style="color: #4f46e5;"><td>Resultado Operacional Parcial</td><td class="td-right">4.284.818,98</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>4. Projeção de Produção para 2026</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Cenário</th>
+              <th class="td-right">Produção (m³)</th>
+              <th class="td-right">Faturamento Estimado</th>
+              <th class="td-right">Var. vs 2025</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Ótimo</strong></td><td class="td-right">90.000</td><td class="td-right">R$ 8.746.095,31</td><td class="td-right" style="color:#166534">+21,94%</td></tr>
+            <tr><td><strong>Esperado</strong></td><td class="td-right">85.000</td><td class="td-right">R$ 8.260.201,12</td><td class="td-right">+15,16%</td></tr>
+            <tr><td><strong>Ruim</strong></td><td class="td-right">78.000</td><td class="td-right">R$ 7.579.949,27</td><td class="td-right">+5,68%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3>5. Saída de Material por Tipo (Comparativo)</h3>
+      <div class="grid">
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th colspan="2">Saída de Material – 2024</th></tr></thead>
+            <tbody>
+              <tr><td>Rachão</td><td class="td-right">34.472</td></tr>
+              <tr><td>Bica</td><td class="td-right">17.628</td></tr>
+              <tr><td>Base</td><td class="td-right">0</td></tr>
+              <tr><td>Detonado</td><td class="td-right">5.367</td></tr>
+              <tr><td>Mataco</td><td class="td-right">3.510</td></tr>
+              <tr><td>Outros (Barro/Brita)</td><td class="td-right">36</td></tr>
+              <tr class="total"><td>Total (m³)</td><td class="td-right">61.013</td></tr>
+              <tr class="total"><td>Total Notas</td><td class="td-right">3.986</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th colspan="2">Saída de Material – 2025</th></tr></thead>
+            <tbody>
+              <tr><td>Rachão</td><td class="td-right">30.586</td></tr>
+              <tr><td>Bica</td><td class="td-right">3.052</td></tr>
+              <tr><td>Base</td><td class="td-right">38.362</td></tr>
+              <tr><td>Detonado</td><td class="td-right">3.385</td></tr>
+              <tr><td>Mataco</td><td class="td-right">6.488</td></tr>
+              <tr><td>Outros (Barro/Brita/Macadame)</td><td class="td-right">4.758</td></tr>
+              <tr class="total"><td>Total (m³)</td><td class="td-right">86.631,44</td></tr>
+              <tr class="total"><td>Total Notas</td><td class="td-right">5.364</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Relatório gerencial elaborado para análise de desempenho produtivo e apoio à tomada de decisão – Diretoria.
+    </div>
+  </div>
+
+</body>
+</html>
